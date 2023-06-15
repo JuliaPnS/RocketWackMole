@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wack a Mole</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+       <div class="moles"></div>
+       <div class="moles"></div>
+       <div class="moles"></div>
+       <div class="moles"></div>
+       <div class="moles"></div>
+       <div class="moles"></div>
+       <div class="moles"></div>
+       <div class="moles"></div>
+       <div class="moles"></div>
+       <div class="moles"></div>
+       <div class="moles"></div>
+       <div class="moles" id="moles-12"></div>
+    </main>
+</body>
+</html>
+<script>
+    let square = document.getElementById('moles-12');
+let time;
+
+/* We intially add the class to trigger the transition*/
+setTimeout(function(){square.classList.toggle('change')},1);
+
+square.addEventListener('transitionend', duration);
+
+/* When the transition is done we toggle the class to start another one*/
+function duration() {
+  time = Math.random() + 1;
+  square.style.setProperty('--animation-time', time + 's');
+  square.classList.toggle('change');
+  console.log(time);
+}
+</script>
